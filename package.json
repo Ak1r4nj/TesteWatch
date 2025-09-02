@@ -1,0 +1,26 @@
+{
+  "name": "testewatch",
+  "version": "1.0.0",
+  "description": "Technical test for Watch Brasil",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ak1r4nj/TesteWatch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ak1r4nj/TesteWatch/issues"
+  },
+  "homepage": "https://github.com/Ak1r4nj/TesteWatch#readme",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "fastify": "^5.5.0",
+    "pg": "^8.16.3"
+  }
+}
