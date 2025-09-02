@@ -1,5 +1,5 @@
 # backend/.gitignore
 
 .env
-.postgres-data
-.node_modules
+postgres-data/
+node_modules/
