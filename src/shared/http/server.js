@@ -37,4 +37,8 @@ const start = async () => {
   }
 };
 
-start();
+if (require.main === module) {
+  start(); // Start the server only if this file is run directly
+}
+
+module.exports = fastify;
