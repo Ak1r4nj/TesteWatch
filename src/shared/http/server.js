@@ -1,12 +1,11 @@
-// backend/src/server.js
-
 require('dotenv').config();
 
 const fastify = require('fastify')({
   logger: true,
 });
 
-const db = require('./database');
+const db = require('../database/database');
+const { usersRoutes } = require('./routes/users.routes.js');
 
 fastify.get('/health-check', async (request, reply) => {
   try {
@@ -25,6 +24,8 @@ fastify.get('/health-check', async (request, reply) => {
     });
   }
 });
+
+fastify.register(usersRoutes);
 
 const start = async () => {
   try {

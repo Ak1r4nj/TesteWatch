@@ -4,7 +4,8 @@
   "description": "Technical test for Watch Brasil",
   "main": "index.js",
   "scripts": {
-    "start": "node src/server.js",
+    "start": "node src/shared/http/server.js",
+    "migrate": "node-pg-migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,8 +20,11 @@
   },
   "homepage": "https://github.com/Ak1r4nj/TesteWatch#readme",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "dotenv": "^17.2.2",
     "fastify": "^5.5.0",
-    "pg": "^8.16.3"
+    "node-pg-migrate": "^8.0.3",
+    "pg": "^8.16.3",
+    "uuid": "^11.1.0"
   }
 }
