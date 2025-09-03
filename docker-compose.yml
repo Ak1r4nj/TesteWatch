@@ -1,4 +1,3 @@
-# backend/docker-compose.yml
 services:
   postgres-db:
       image: postgres:14-alpine  
