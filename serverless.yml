@@ -1,0 +1,15 @@
+service: users-api
+provider:
+  name: aws
+  runtime: nodejs22.x
+  region: sa-east-1
+
+functions:
+  api:
+    handler: lambda.handler
+    events:
+      - httpApi: '*'
+
+
+plugins:
+  - serverless-offline

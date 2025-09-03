@@ -27,18 +27,17 @@ fastify.get('/health-check', async (request, reply) => {
 
 fastify.register(usersRoutes);
 
-const start = async () => {
-  try {
-    const port = process.env.PORT || 3000;
-    await fastify.listen({ port: port, host: '0.0.0.0' });
-  } catch (err) {
-    fastify.log.error(err);
-    process.exit(1);
-  }
-};
-
 if (require.main === module) {
-  start(); // Start the server only if this file is run directly
+  const start = async () => {
+    try {
+      const port = process.env.PORT || 3000;
+      await fastify.listen({ port, host: '0.0.0.0' });
+    } catch (err) {
+      fastify.log.error(err);
+      process.exit(1);
+    }
+  };
+  start();
 }
 
 module.exports = fastify;
