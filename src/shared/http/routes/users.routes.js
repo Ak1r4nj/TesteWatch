@@ -9,7 +9,7 @@ async function usersRoutes(fastify) {
   fastify.get("/users", (req, reply) => listUsersController.handle(req, reply));
   fastify.put("/users/:id", (req, reply) => updateUserController.handle(req, reply));
   fastify.delete("/users/:id", (req, reply) => deleteUserController.handle(req, reply));
-  fastify.post("/login", (req, reply) => loginUserController.handle(req, reply)); // 🚀 Login aqui
+  fastify.post("/login", (req, reply) => loginUserController.handle(req, reply));
 }
 
 module.exports = { usersRoutes };
