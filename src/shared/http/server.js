@@ -9,6 +9,7 @@ const { usersRoutes } = require('./routes/users.routes.js');
 const { activitiesRoutes } = require("./routes/activities.routes");
 
 fastify.register(activitiesRoutes);
+fastify.register(usersRoutes);
 
 fastify.get('/health-check', async (request, reply) => {
   try {
@@ -27,8 +28,6 @@ fastify.get('/health-check', async (request, reply) => {
     });
   }
 });
-
-fastify.register(usersRoutes);
 
 if (require.main === module) {
   const start = async () => {
