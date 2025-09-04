@@ -1,4 +1,4 @@
-const db = require("../../../../shared/database");
+const db = require("../../../../shared/database/database");
 
 class PostgresActivitiesRepository {
   async findAll() {
