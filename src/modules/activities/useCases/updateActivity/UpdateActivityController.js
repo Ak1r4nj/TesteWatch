@@ -3,20 +3,24 @@ class UpdateActivityController {
     this.updateActivityUseCase = updateActivityUseCase;
   }
 
-  async handle(request, reply) {
-    const { id } = request.params;
-    const { name, category, progress, userIds } = request.body;
+  async handle(req, reply) {
+    console.log('[CONTROLLER] Dados recebidos para executar:', req.body);
+    const { id } = req.params;
+    const { name, category, progress, user_ids } = req.body;
 
     try {
-      const updated = await this.updateActivityUseCase.execute(id, {
+      const activity = await this.updateActivityUseCase.execute(id, {
         name,
         category,
         progress,
-        userIds,
+        user_ids,
       });
-      return reply.code(200).send(updated);
+
+      return reply.code(200).send(activity);
     } catch (error) {
-      return reply.code(400).send({ message: error.message });
+      return reply.code(400).send({
+        message: error.message || "Unexpected error.",
+      });
     }
   }
 }

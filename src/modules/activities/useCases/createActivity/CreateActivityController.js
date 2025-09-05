@@ -4,14 +4,14 @@ class CreateActivityController {
   }
 
   async handle(request, reply) {
-    const { name, category, progress, userIds } = request.body;
+    const { name, category, progress, user_ids } = request.body;
 
     try {
       const activity = await this.createActivityUseCase.execute({
         name,
         category,
         progress,
-        userIds,
+        user_ids: Array.isArray(user_ids) ? user_ids : (user_ids || []),
       });
       return reply.code(201).send(activity);
     } catch (error) {

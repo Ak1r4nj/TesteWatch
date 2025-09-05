@@ -72,6 +72,25 @@ Atualizar usuário (PUT /users/:id)
 
 Deletar usuário (DELETE /users/:id)
 
+CRUD de atividades (endpoints /activities)
+
+---
+
+**Documentação (Swagger)**
+
+O projeto conta com documentação interativa da API via Swagger UI.
+Para acessar:
+
+Inicie o servidor (npx sls offline ou npm run dev).
+
+Acesse no navegador:
+
+```
+http://localhost:3000/docs
+```
+
+Você poderá visualizar e testar os endpoints diretamente pela interface.
+
 ---
 
 **Deploy** 

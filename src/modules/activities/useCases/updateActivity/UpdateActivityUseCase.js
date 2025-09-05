@@ -3,15 +3,16 @@ class UpdateActivityUseCase {
     this.activitiesRepository = activitiesRepository;
   }
 
-  async execute(id, { name, category, progress, userIds }) {
+  async execute(id, { name, category, progress, user_ids }) {
+
     const activity = await this.activitiesRepository.findById(id);
     if (!activity) {
       throw new Error("Activity not found");
     }
 
-    await this.activitiesRepository.update(id, { name, category, progress, userIds });
+    await this.activitiesRepository.update(id, { name, category, progress, user_ids });
 
-    return { ...activity, name, category, progress, userIds };
+    return { ...activity, name, category, progress, user_ids };
   }
 }
 

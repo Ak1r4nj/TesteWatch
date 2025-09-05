@@ -5,8 +5,8 @@ class CreateActivityUseCase {
     this.activitiesRepository = activitiesRepository;
   }
 
-  async execute({ name, category, progress, userIds }) {
-    const activity = new Activity({ name, category, progress, userIds });
+  async execute({ name, category, progress, user_ids }) {
+    const activity = new Activity({ name, category, progress, user_ids });
     await this.activitiesRepository.create(activity);
     return activity;
   }
