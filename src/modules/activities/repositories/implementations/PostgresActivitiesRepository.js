@@ -11,20 +11,20 @@ class PostgresActivitiesRepository {
     return result.rows[0] || null;
   }
 
-  async create({ id, name, category, progress, userIds, createdAt }) {
+  async create({ id, name, category, progress, user_ids, createdAt }) {
     await db.query(
       `INSERT INTO activities (id, name, category, progress, user_ids, created_at)
        VALUES ($1, $2, $3, $4, $5, $6)`,
-      [id, name, category, progress, JSON.stringify(userIds), createdAt]
+      [id, name, category, progress, JSON.stringify(user_ids), createdAt]
     );
   }
 
-  async update(id, { name, category, progress, userIds }) {
+  async update(id, { name, category, progress, user_ids }) {
     await db.query(
       `UPDATE activities 
        SET name = $1, category = $2, progress = $3, user_ids = $4 
        WHERE id = $5`,
-      [name, category, progress, JSON.stringify(userIds), id]
+      [name, category, progress, JSON.stringify(user_ids), id]
     );
   }
 
